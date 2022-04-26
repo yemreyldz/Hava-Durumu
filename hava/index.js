@@ -1,9 +1,9 @@
 var key = "";
 
-function city(sehir) {
-    var sehir =$("#search").val();
+function weather(city) {
+    var city =$("#search").val();
     $.ajax({
-        url: 'https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city='+sehir,
+        url: 'https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city='+city,
         type: 'GET',
         dataType: 'json',
         headers: {
@@ -48,7 +48,7 @@ $(document).ready(function () {
     $(document).on("click", "#btn", function () {
             $(".table tbody").empty();
             $(".city").empty();
-            city();
+            weather();
     });
 });
 
